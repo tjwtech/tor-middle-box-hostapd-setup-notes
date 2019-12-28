@@ -8,6 +8,8 @@ Install latest stable tor from repo: https://2019.www.torproject.org/docs/debian
 Set IP address for wlan0: (This change is only temporary, consider using somthing like netplan to apply on startup)
 ip addr add 192.168.1.1/24 dev wlan0
 
+dnsmasq, hostapd and tor will only run if wlan0 has an ip address assigned. Follow instructions here to start services after interfaces have been configured: https://unix.stackexchange.com/questions/126009/cause-a-script-to-execute-after-networking-has-started/126146#126146
+
 dnsmasq:
 port=0                                    # Disable dns server (All dns lookups are handeled by tor)
 interface=wlan0                           # hostapd AP interface
