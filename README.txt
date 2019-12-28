@@ -5,6 +5,9 @@ Install: hostapd dnsmasq tor
 
 Install latest stable tor from repo: https://2019.www.torproject.org/docs/debian.html.en
 
+Set IP address for wlan0: (This change is only temporary, consider using somthing like netplan to apply on startup)
+ip addr add 192.168.1.1/24 dev wlan0
+
 dnsmasq:
 port=0                                    # Disable dns server (All dns lookups are handeled by tor)
 interface=wlan0                           # hostapd AP interface
@@ -36,10 +39,7 @@ TransPort 192.168.1.1:9040
 DNSPort 192.168.1.1:5353
 # You may also wish to setup bandwidth limits to stop users from saturating your network
 
-Set IP address for wlan0:
-ip addr add 192.168.1.1/24 dev wlan0
-
-Setup iptables rules for transperant proxying:
+Setup iptables rules for transperant proxying: (These changes are only temporary, consider using iptables-persistent to apply these on startup)
 ######################################
 _trans_port="9040" # Tor's TransPort
 _inc_if="wlan0"    # hostapd AP interface
