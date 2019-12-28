@@ -11,7 +11,7 @@ interface=wlan0                           # hostapd AP interface
 dhcp-range=192.168.1.50,192.168.1.150,24h # DHCP client pool (100 available addresses with 24h leases)
 dhcp-option=option:dns-server,192.168.1.1 # DNS server for all DHCP clients (make sure this is the IP address of wlan0)
 
-hostapd: (Remove the comments, as hostapd sometimes struggles with them)(You may need to set DAEMON_CONF= in /etc/init.d/hostapd)
+hostapd: (Remove the comments, as hostapd sometimes struggles with them)(You may need to set DAEMON_CONF= in /etc/init.d/hostapd or /etc/default/hostapd)
 ssid=Tor Free WiFi              # WiFi name
 interface=wlan0                 # AP interface
 hw_mode=g                       # g simply means 2.4GHz band
